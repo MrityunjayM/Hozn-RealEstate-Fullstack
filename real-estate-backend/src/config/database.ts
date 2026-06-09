@@ -5,10 +5,10 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export const sequelize = new Sequelize({
-  database: "real_estate_db", // اسم قاعدة البيانات
-  username: "postgres",       
-  password: "1572001",  // كلمة المرور الخاصة بك
-  host: "127.0.0.1",
+  database: process.env.DATABASE_NAME || "real_estate_db",
+  username: process.env.DATABASE_USER || "postgres",
+  password: process.env.DATABASE_PASSWORD,
+  host: process.env.DATABASE_HOST || "127.0.0.1",
   dialect: "postgres",
   models: [User],
 });
