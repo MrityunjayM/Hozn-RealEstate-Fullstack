@@ -25,7 +25,7 @@ const ProfileBody = () => {
    useEffect(() => {
       const fetchUserData = async () => {
          try {
-            const res = await fetch("process.env.NEXT_PUBLIC_API_URL/profile", {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/profile`, {
                headers: {
                   Authorization: `Bearer ${token}`,
                },
@@ -52,7 +52,7 @@ const ProfileBody = () => {
 
    const handleSave = async () => {
       try {
-         const res = await fetch("process.env.NEXT_PUBLIC_API_URL/profile", {
+         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/profile`, {
             method: "PUT",
             headers: {
                "Content-Type": "application/json",

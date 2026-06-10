@@ -54,7 +54,7 @@ const RegisterForm = () => {
   const onSubmit = async (data: FormData) => {
     setLoading(true);
     try {
-      const response = await axios.post("process.env.NEXT_PUBLIC_API_URL/auth/signup", data);
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/signup`, data);
 
       if (response.status === 201) {
         toast.success("Registration successful! Redirecting to login...", {
